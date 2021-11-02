@@ -4,6 +4,7 @@ Name:
 Roll No:
 """
 
+from os import X_OK
 import language_tests as test
 
 project = "Language" # don't edit this
@@ -17,7 +18,13 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
+    f = open(filename)
+    x = []
+    y = f.read().splitlines()
+    for i in y:
+        if len(i)>0:
+            x.append(i.split( ))
+    return x
 
 
 '''
@@ -27,7 +34,11 @@ Parameters: 2D list of strs
 Returns: int
 '''
 def getCorpusLength(corpus):
-    return
+    count = 0
+    for i in corpus:
+        for j in i:
+            count+= 1
+    return count
 
 
 '''
@@ -37,7 +48,12 @@ Parameters: 2D list of strs
 Returns: list of strs
 '''
 def buildVocabulary(corpus):
-    return
+    x= []
+    for i in corpus:
+        for j in i:
+            if j not in x:
+                x.append(j)
+    return  x
 
 
 '''
@@ -47,7 +63,14 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countUnigrams(corpus):
-    return
+    x={ }
+    for i in corpus:
+        for j in i:
+            if j not in x:
+                x[j] = 1
+            else:
+                x[j]+= 1
+    return  x
 
 
 '''
@@ -57,7 +80,11 @@ Parameters: 2D list of strs
 Returns: list of strs
 '''
 def getStartWords(corpus):
-    return
+    x=[]
+    for i in corpus:
+        if i[0] not in x:
+            x.append(i[0])
+    return  x
 
 
 '''
@@ -67,7 +94,13 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countStartWords(corpus):
-    return
+    x={}
+    for i in corpus:
+        if i[0] not in x:
+            x[i[0]] =1
+        else:
+            x[i[0]]+=1
+    return x
 
 
 '''
@@ -285,11 +318,16 @@ def scatterPlot(xs, ys, labels, title):
 
 # This code runs the test cases to check your work
 if __name__ == "__main__":
-    print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.week1Tests()
-    print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek1()
-
+    # print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
+    # test.week1Tests()
+    # print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
+    # test.runWeek1()
+    # test.testLoadBook()
+    # test.testGetCorpusLength()
+    # test.testBuildVocabulary()
+    # test.testCountUnigrams()
+    # test.testGetStartWords()
+    test.testCountStartWords()
     ## Uncomment these for Week 2 ##
 """
     print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
