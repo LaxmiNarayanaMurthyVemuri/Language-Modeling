@@ -1,9 +1,9 @@
 """
 Language Modeling Project
-Name:
-Roll No:
+Name: Rahul Kumar
+Roll No: 05
 """
-
+from os import read
 import language_tests as test
 
 project = "Language" # don't edit this
@@ -17,7 +17,12 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
+   result=[]
+   open_ = open(filename).read().splitlines()    
+   for word in open_:
+       if len(word)!=0:
+        result.append(word.split(' '))
+   return result
 
 
 '''
@@ -285,21 +290,22 @@ def scatterPlot(xs, ys, labels, title):
 
 # This code runs the test cases to check your work
 if __name__ == "__main__":
-    print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.week1Tests()
-    print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek1()
+#     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
+#     test.week1Tests()
+#     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
+#     test.runWeek1()
 
     ## Uncomment these for Week 2 ##
-"""
+    """
     print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
     test.week2Tests()
     print("\n" + "#"*15 + " WEEK 2 OUTPUT " + "#" * 15 + "\n")
     test.runWeek2()
-"""
+    """
 
     ## Uncomment these for Week 3 ##
-"""
+    """
     print("\n" + "#"*15 + " WEEK 3 OUTPUT " + "#" * 15 + "\n")
     test.runWeek3()
-"""
+    """
+    test.testLoadBook()
