@@ -17,7 +17,14 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
+    finallist = []
+    file= open(filename, "r").read()
+    i = file.split("\n")
+    for j in i:
+        k = j.split(" ")
+        if len(k) != 1:
+            finallist.append(k)
+    return finallist
 
 
 '''
@@ -285,10 +292,11 @@ def scatterPlot(xs, ys, labels, title):
 
 # This code runs the test cases to check your work
 if __name__ == "__main__":
-    print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.week1Tests()
-    print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek1()
+    # print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
+    # test.week1Tests()
+    # print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
+    # test.runWeek1()
+    test.testLoadBook()
 
     ## Uncomment these for Week 2 ##
 """
