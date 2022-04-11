@@ -87,7 +87,14 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countUnigrams(corpus):
-    return
+    dict={}
+    for i in range(len(corpus)):
+        for j in range(len(corpus[i])):
+            if corpus[i][j] not in dict:
+                dict[corpus[i][j]]=1
+            else:
+                dict[corpus[i][j]]+=1
+    return dict
 
 
 '''
