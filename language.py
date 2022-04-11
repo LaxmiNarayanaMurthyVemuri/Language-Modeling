@@ -65,8 +65,19 @@ Parameters: 2D list of strs
 Returns: list of strs
 '''
 def buildVocabulary(corpus):
-    
-    return
+    dict={}
+    list=[]
+    for i in range(len(corpus)):
+        for j in range(len(corpus[i])):
+            if corpus[i][j] not in dict:
+                dict[corpus[i][j]]=1
+            else:
+                dict[corpus[i][j]]+=1
+    s=dict.keys()
+    for k in s:
+        list.append(k)
+    #print(list)
+    return list 
 
 
 '''
