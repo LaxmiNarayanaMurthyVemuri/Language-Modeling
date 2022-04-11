@@ -17,7 +17,22 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
+    list=[]
+    file=open(filename,"r")
+    content=file.read()
+    content_split=content.split("\n")
+    #print(len(content_split))
+    for i in range(len(content_split)):
+        #for j in range(len(content_split[i])):
+        x=content_split[i].split()
+        if x: #here it returns a boolen value,only when the content is present, it appends  
+            list.append(x)
+    return list
+    
+    #for i in range(len(content)):
+
+
+    #return
 
 
 '''
