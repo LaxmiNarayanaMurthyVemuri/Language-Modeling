@@ -17,7 +17,18 @@ Parameters: str
 Returns: 2D list of strs
 '''
 def loadBook(filename):
-    return
+    file = open(filename,"r")
+    lines = file.read().split("\n")
+    lst =[]
+    for line in lines:
+        if len(line) != 0:
+            words = line.split()
+            lst.append(words)
+    file.close()
+
+
+    return lst
+
 
 
 '''
@@ -27,7 +38,19 @@ Parameters: 2D list of strs
 Returns: int
 '''
 def getCorpusLength(corpus):
-    return
+    # word_count = []
+
+    # for word in range(len(corpus)):
+    #     for sub_word in range(len(corpus[word])):
+    #         word_count.append(corpus[word][sub_word])
+
+    count = 0
+    for word in range(len(corpus)):
+            count += len(corpus[word])
+
+    # print(word_count)
+    # print(len(word_count))
+    return count
 
 
 '''
