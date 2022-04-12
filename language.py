@@ -5,6 +5,7 @@ Roll No:
 """
 
 import language_tests as test
+from collections import Counter
 
 project = "Language" # don't edit this
 
@@ -239,14 +240,15 @@ def buildBigramProbs(unigramCounts, bigramCounts):
         probs_list=[]
         for key,value in bigramCounts[prevWord].items():
             keys_list.append(key)
-        #print(keys_list)
+            #print(keys_list)
             #probs_list.append(value)
         #print(probs_list)
             probs_list.append(value/unigramCounts[prevWord])
-            #print(probs_list)
+            #print(keys_list,probs_list)
             temporary={}
             temporary["words"]=keys_list
             temporary["probs"]=probs_list
+            #print(temporary)
         dict[prevWord]=temporary
     #print(dict)
     return dict
@@ -260,9 +262,25 @@ Parameters: int ; list of strs ; list of floats ; list of strs
 Returns: dict mapping strs to floats
 '''
 def getTopWords(count, words, probs, ignoreList):
-    return
+    dict={}
+    dict1={}
+    for i in range(len(words)):
+        if words[i] not in ignoreList:
+            dict[words[i]]=probs[i]
+    #print(dict)
+    #x=Counter(dict)
+    sort=sorted(dict.items(),key=lambda k: -k[1])
+    #print(sort)-it is a list
+    i=0
+    while(i<count):
+        #if sort[i][0] not in ignoreList:
+        dict1[sort[i][0]]=sort[i][1]
+        i=i+1
+    #print(dict1)
+    return dict1 
 
-
+#assert(getTopWords(2, [ "hello", "world", "again"], [2/5, 2/5, 1/5], []) == \
+#        { "hello" : 2/5, "world" : 2/5 })
 '''
 generateTextFromUnigrams(count, words, probs)
 #5 [Check6-2]
@@ -271,6 +289,7 @@ Returns: str
 '''
 from random import choices
 def generateTextFromUnigrams(count, words, probs):
+    
     return
 
 
