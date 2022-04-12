@@ -5,7 +5,7 @@ Roll No:
 """
 
 import language_tests as test
-from collections import Counter
+#from collections import Counter
 
 project = "Language" # don't edit this
 
@@ -289,8 +289,15 @@ Returns: str
 '''
 from random import choices
 def generateTextFromUnigrams(count, words, probs):
-    
-    return
+    sentence=""
+    i=0
+    while(i<count):
+        s=choices(words,weights=probs)
+        sentence=sentence+" "+s[0]
+        i=i+1
+    #print(sentence)
+    #print(len(sentence))
+    return sentence
 
 
 '''
