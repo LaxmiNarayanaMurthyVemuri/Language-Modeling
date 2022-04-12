@@ -131,15 +131,15 @@ def testCountBigrams():
         ["some", "people", "started", "singing", "it", ",", "not", "knowing", "what", "it", "was", ","],
         ["and", "now", "they", "keep", "on", "singing", "it", "forever", "just", "because", ".", ".", "."] ]) == \
         { "this" : { "is" : 1 }, "is" : { "the" : 1 }, "the" : { "song" : 1 }, 
-          "song" : { "that" : 1 }, "that" : { "never" : 1 }, "never" : { "ends" : 1 }, 
-          "yes" : { "it" : 1 }, "it" : { "goes" : 1, "," : 1, "was" : 1, "forever" : 1 }, "goes" : { "on" : 1 }, 
-          "on" : { "and" : 1, "my" : 1, "singing" : 1 }, "and" : { "on" : 1, "now" : 1 }, "my" : { "friends" : 1}, 
-         "friends" : { "!" : 1 }, "some" : { "people" : 1 }, "people" : { "started" : 1 }, 
-         "started" : { "singing" : 1 }, "singing" : { "it" : 2 }, "," : { "not" : 1 }, 
-         "not" : { "knowing" : 1 }, "knowing" : { "what" : 1 }, "what" : { "it" : 1 }, 
-         "was" : { "," : 1 }, "now" : { "they" : 1 }, "they" : { "keep" : 1 }, 
-         "keep" : { "on" : 1 }, "forever" : { "just" : 1 }, "just" : { "because" : 1 }, 
-         "because" : { "." : 1 }, "." : { "." : 2 } })
+        "song" : { "that" : 1 }, "that" : { "never" : 1 }, "never" : { "ends" : 1 }, 
+        "yes" : { "it" : 1 }, "it" : { "goes" : 1, "," : 1, "was" : 1, "forever" : 1 }, "goes" : { "on" : 1 }, 
+        "on" : { "and" : 1, "my" : 1, "singing" : 1 }, "and" : { "on" : 1, "now" : 1 }, "my" : { "friends" : 1}, 
+        "friends" : { "!" : 1 }, "some" : { "people" : 1 }, "people" : { "started" : 1 }, 
+        "started" : { "singing" : 1 }, "singing" : { "it" : 2 }, "," : { "not" : 1 }, 
+        "not" : { "knowing" : 1 }, "knowing" : { "what" : 1 }, "what" : { "it" : 1 }, 
+        "was" : { "," : 1 }, "now" : { "they" : 1 }, "they" : { "keep" : 1 }, 
+        "keep" : { "on" : 1 }, "forever" : { "just" : 1 }, "just" : { "because" : 1 }, 
+        "because" : { "." : 1 }, "." : { "." : 2 } })
     print("... done!")
 
 def week1Tests():

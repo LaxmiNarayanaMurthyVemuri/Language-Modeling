@@ -151,8 +151,24 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to (dicts mapping strs to ints)
 '''
 def countBigrams(corpus):
-    
-    return
+    #print(corpus)
+    dict={}
+    for i in range(len(corpus)):
+        for j in range(0,len(corpus[i])-1):
+            #print(corpus[i][j],corpus[i][j+1])
+            if corpus[i][j] not in dict:
+                dict[corpus[i][j]]={}
+                dict[corpus[i][j]][corpus[i][j+1]]=1
+            else:
+                if corpus[i][j+1] not in dict[corpus[i][j]]:
+                    dict[corpus[i][j]][corpus[i][j+1]]=1
+                else:
+                    dict[corpus[i][j]][corpus[i][j+1]]+=1
+                #dict[corpus[i][j]][corpus[i][j+1]]+=1
+        #print(dict)
+
+    #print(dict)
+    return dict
 
 
 ### WEEK 2 ###
@@ -164,6 +180,7 @@ Parameters: list of strs
 Returns: list of floats
 '''
 def buildUniformProbs(unigrams):
+    
     return
 
 
