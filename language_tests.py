@@ -408,7 +408,7 @@ def testGenerateTextFromBigrams():
     sentenceWords = sentence.strip().split()
     assert(len(sentenceWords) == 10)
 
-    # Check that the order of words is legal
+    # # Check that the order of words is legal
     for i in range(len(sentenceWords)):
         if i == 0 or sentenceWords[i-1] == ".":
             assert(sentenceWords[i] in startWords)

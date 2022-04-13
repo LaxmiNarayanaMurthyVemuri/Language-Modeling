@@ -95,6 +95,7 @@ def countUnigrams(corpus):
                 dict[corpus[i][j]]=1
             else:
                 dict[corpus[i][j]]+=1
+    #print(dict)
     return dict
 
 
@@ -118,9 +119,10 @@ def getStartWords(corpus):
             dict[list[i]]+=1
     #print(dict)
     s=dict.keys()
+    #print(s)
     for k in s:
         result.append(k)
-    #print(list)
+    #print(result)
     return result
 
 
@@ -186,6 +188,7 @@ def buildUniformProbs(unigrams):
     #print(len(unigrams))
     for i in range(len(unigrams)):
         list.append(1/len(unigrams))
+    #print(list)
     return list 
 
 
@@ -307,7 +310,16 @@ Parameters: int ; list of strs ; list of floats ; dict mapping strs to (dicts ma
 Returns: str
 '''
 def generateTextFromBigrams(count, startWords, startWordProbs, bigramProbs):
-    return
+    text=""
+    i=0
+    while(i<count):
+        words=choices(startWords,weights=startWordProbs)
+        text=text+words[0]+" "
+        i=i+1
+    #print(str)
+    #print(len(str))
+    return text
+
 
 
 ### WEEK 3 ###
@@ -324,6 +336,14 @@ Parameters: 2D list of strs
 Returns: None
 '''
 def graphTop50Words(corpus):
+    #print(corpus)
+    import matplotlib.pyplot as plt
+    words=buildVocabulary(corpus)
+    #print(words)
+    probs=buildUnigramProbs(words,countUnigrams(corpus),getCorpusLength(corpus))
+    values=getTopWords(50, words, probs, ignore)
+    #print(values)
+    barPlot(values,"graphTop50Words")
     return
 
 
@@ -453,21 +473,19 @@ def scatterPlot(xs, ys, labels, title):
 # This code runs the test cases to check your work
 
 if __name__ == "__main__":
+
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
     test.week1Tests()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     test.runWeek1()
 
     ## Uncomment these for Week 2 ##
-
-    print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
+    '''print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
     test.week2Tests()
     print("\n" + "#"*15 + " WEEK 2 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek2()
+    test.runWeek2()'''
 
 
     ## Uncomment these for Week 3 ##
-"""
     print("\n" + "#"*15 + " WEEK 3 OUTPUT " + "#" * 15 + "\n")
     test.runWeek3()
-"""
